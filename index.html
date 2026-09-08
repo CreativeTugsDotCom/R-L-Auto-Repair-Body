@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>R&L Auto Repair and Body | San Antonio, TX | Trusted Independent Repair</title>
+    <meta name="description" content="Trusted local auto repair and light body shop in San Antonio, TX. Diagnostic, engine repair, transmission, electrical, oil changes, and light body work. Call (210) 421-4268.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#dc2626',
+                            darkred: '#991b1b',
+                            brightred: '#ef4444',
+                            dark: '#0b0f17',
+                            card: '#131b2a',
+                            border: 'rgba(255, 255, 255, 0.08)',
+                            gold: '#f59e0b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #0b0f17;
+            color: #f3f4f6;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        
+        .font-display {
+            font-family: 'Oswald', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(19, 27, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-panel-hover:hover {
+            border-color: rgba(220, 38, 38, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(220, 38, 38, 0.3);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f17;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dc2626;
+            border-radius: 4px;
+        }
+
+        /* Hero Radial Gradient Glow */
+        .hero-glow {
+            background: radial-gradient(circle at 50% 30%, rgba(220, 38, 38, 0.25) 0%, rgba(11, 15, 23, 0.95) 70%);
+        }
+
+        /* Before-After Image Comparison Slider */
+        .ba-container {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+        .ba-after-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        .ba-before-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 50%;
+            overflow: hidden;
+            z-index: 10;
+        }
+        .ba-before-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            max-width: none;
+            object-fit: cover;
+        }
+        .ba-slider-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background: #ef4444;
+            z-index: 20;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+        }
+        .ba-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ef4444;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: justify-center;
+            cursor: ew-resize;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.9);
+        }
+
+        /* Subtle Pulse for Call Button */
+        @keyframes subtle-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
+            50% { box-shadow: 0 0 0 12px rgba(220, 38, 38, 0); }
+        }
+        .pulse-btn {
+            animation: subtle-pulse 2.5s infinite;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-red selection:text-white">
+
+    <!-- Top Utility Announcement Bar -->
+    <div class="bg-gradient-to-r from-red-950 via-zinc-900 to-red-950 border-b border-white/10 text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-zinc-300">
+            <div class="flex items-center gap-4">
+                <span id="shopStatusBadge" class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-semibold text-[11px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                    <i class="fa-solid fa-circle text-[8px] text-emerald-400"></i> Open Today: 9:00 AM – 6:00 PM
+                </span>
+                <span class="hidden md:inline-block text-zinc-400">
+                    <i class="fa-solid fa-location-dot text-brand-red mr-1"></i> 4470 Seabreeze Dr, San Antonio, TX 78220
+                </span>
+            </div>
+            <div class="flex items-center gap-6">
+                <a href="tel:2104214268" class="hover:text-brand-brightred transition-colors flex items-center gap-1.5 font-medium">
+                    <i class="fa-solid fa-phone text-brand-red"></i> (210) 421-4268
+                </a>
+                <span class="text-zinc-600">|</span>
+                <a href="https://maps.google.com/?cid=10455720962454973639" target="_blank" class="hover:text-white transition-colors flex items-center gap-1">
+                    <i class="fa-solid fa-directions text-brand-gold"></i> Directions
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-panel border-b border-white/10 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#home" class="flex items-center gap-3 group">
+                <div class="w-11 h-11 rounded-lg bg-gradient-to-br from-brand-red to-red-900 flex items-center justify-center text-white font-display text-2xl font-bold shadow-lg shadow-brand-red/30 group-hover:scale-105 transition-transform">
+                    R&L
+                </div>
+                <div>
+                    <div class="font-display text-xl sm:text-2xl font-bold tracking-wider text-white flex items-center gap-2">
+                        R&L AUTO REPAIR <span class="text-brand-red">&</span> BODY
+                    </div>
+                    <div class="text-[10px] uppercase tracking-widest text-zinc-400 font-medium">
+                        San Antonio • Independent Auto & Body Shop
+                    </div>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Items -->
+            <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-zinc-300">
+                <a href="#home" class="hover:text-brand-brightred transition-colors py-1">Home</a>
+                <a href="#about" class="hover:text-brand-brightred transition-colors py-1">About</a>
+                <a href="#services" class="hover:text-brand-brightred transition-colors py-1">Services</a>
+                <a href="#work" class="hover:text-brand-brightred transition-colors py-1">Before & After</a>
+                <a href="#why-us" class="hover:text-brand-brightred transition-colors py-1">Why Choose Us</a>
+                <a href="#reviews" class="hover:text-brand-brightred transition-colors py-1">Reviews</a>
+                <a href="#contact" class="hover:text-brand-brightred transition-colors py-1">Contact</a>
+            </nav>
+
+            <!-- Header Action Button -->
+            <div class="hidden sm:flex items-center gap-3">
+                <button onclick="openModal('estimateModal')" class="px-4 py-2.5 rounded-lg text-xs font-semibold uppercase tracking-wider text-zinc-200 border border-white/20 hover:border-brand-red hover:bg-brand-red/10 transition-all">
+                    Get Estimate
+                </button>
+                <a href="tel:2104214268" class="pulse-btn px-5 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red text-white shadow-lg shadow-brand-red/25 flex items-center gap-2 transition-all">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>(210) 421-4268</span>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="lg:hidden p-2 text-zinc-300 hover:text-white text-2xl focus:outline-none" aria-label="Toggle Navigation Menu">
+                <i class="fa-solid fa-bars" id="menuIcon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobileDrawer" class="hidden lg:hidden bg-zinc-950/95 backdrop-blur-xl border-b border-white/10 px-6 py-6 transition-all">
+            <div class="flex flex-col gap-4 text-zinc-200 font-medium">
+                <a href="#home" onclick="toggleMobileMenu()" class="py-2 border-b border-zinc-800 flex items-center justify-between">
+                    <span>Home</span> <i class="fa-solid fa-chevron-right text-xs text-zinc-600"></i>
+                </a>
+                <a href="#about" onclick="toggleMobileMenu()" class="py-2 border-b border-zinc-800 flex items-center justify-between">
+                    <span>About Us</span> <i class="fa-solid fa-chevron-right text-xs text-zinc-600"></i>
+                </a>
+                <a href="#services" onclick="toggleMobileMenu()" class="py-2 border-b border-zinc-800 flex items-center justify-between">
+                    <span>Services & Repairs</span> <i class="fa-solid fa-chevron-right text-xs text-zinc-600"></i>
+                </a>
+                <a href="#work" onclick="toggleMobileMenu()" class="py-2 border-b border-zinc-800 flex items-center justify-between">
+                    <span>Before & After Showcase</span> <i class="fa-solid fa-chevron-right text-xs text-zinc-600"></i>
+                </a>
+                <a href="#why-us" onclick="toggleMobileMenu()" class="py-2 border-b border-zinc-800 flex items-center justify-between">
+                    <span>Why Choose R&L</span> <i class="fa-solid fa-chevron-right text-xs text-zinc-600"></i>
+                </a>
+                <a href="#reviews" onclick="toggleMobileMenu()" class="py-2 border-b border-zinc-800 flex items-center justify-between">
+                    <span>Customer Reviews (4.7★)</span> <i class="fa-solid fa-chevron-right text-xs text-zinc-600"></i>
+                </a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="py-2 flex items-center justify-between">
+                    <span>Contact & Location</span> <i class="fa-solid fa-chevron-right text-xs text-zinc-600"></i>
+                </a>
+                <div class="pt-4 flex flex-col gap-3">
+                    <a href="tel:2104214268" class="w-full text-center py-3 bg-brand-red text-white font-bold rounded-lg shadow-lg flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-phone"></i> Call Now: (210) 421-4268
+                    </a>
+                    <button onclick="toggleMobileMenu(); openModal('estimateModal')" class="w-full text-center py-3 border border-zinc-700 bg-zinc-900 text-white font-semibold rounded-lg">
+                        Request Estimate Online
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center hero-glow py-20 overflow-hidden">
+        <!-- Background Engine Image & Mesh Gradient -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&q=80&w=2000" alt="Auto Workshop Engine Diagnostics" class="w-full h-full object-cover object-center opacity-20 filter contrast-125">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0f17] via-[#0b0f17]/80 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0b0f17] via-transparent to-[#0b0f17]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
+            <!-- San Antonio Local Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand-red/30 text-brand-brightred text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 animate-pulse">
+                <i class="fa-solid fa-shield-halved text-brand-gold"></i>
+                San Antonio's Trusted Independent Auto & Light Body Shop
+            </div>
+
+            <!-- Headline -->
+            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-white max-w-5xl mx-auto leading-none uppercase">
+                Reliable Auto Repair. <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-brand-brightred to-amber-500">
+                    Honest Service. Done Right.
+                </span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="mt-6 text-base sm:text-xl text-zinc-300 max-w-3xl mx-auto leading-relaxed font-normal">
+                Professional automotive mechanical repair and light body work in San Antonio, TX — with straightforward service, fair pricing, and clear communication.
+            </p>
+
+            <!-- Hero Action CTA Group -->
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="tel:2104214268" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red text-white text-base font-bold shadow-2xl shadow-brand-red/40 flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1">
+                    <i class="fa-solid fa-phone text-lg"></i>
+                    <span>Call Now: (210) 421-4268</span>
+                </a>
+                <a href="https://maps.google.com/?cid=10455720962454973639" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white text-base font-semibold border border-white/20 hover:border-brand-brightred hover:bg-white/10 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-1">
+                    <i class="fa-solid fa-location-arrow text-brand-gold"></i>
+                    <span>Get Directions</span>
+                </a>
+                <button onclick="openModal('estimateModal')" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-zinc-800/90 hover:bg-zinc-700 text-zinc-100 text-base font-semibold border border-zinc-600/50 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-1">
+                    <i class="fa-solid fa-calculator text-brand-brightred"></i>
+                    <span>Free Estimate</span>
+                </button>
+            </div>
+
+            <!-- Trust Badges Bar -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="glass-panel p-4 rounded-xl flex items-center justify-center gap-3 border-white/5">
+                    <i class="fa-solid fa-star text-brand-gold text-2xl"></i>
+                    <div class="text-left">
+                        <div class="font-bold text-white text-lg leading-tight">4.7 ★ Rated</div>
+                        <div class="text-xs text-zinc-400">Google Local Reviews</div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl flex items-center justify-center gap-3 border-white/5">
+                    <i class="fa-solid fa-wrench text-brand-red text-2xl"></i>
+                    <div class="text-left">
+                        <div class="font-bold text-white text-lg leading-tight">Local & Independent</div>
+                        <div class="text-xs text-zinc-400">Owner Operated</div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl flex items-center justify-center gap-3 border-white/5">
+                    <i class="fa-solid fa-hand-holding-dollar text-emerald-400 text-2xl"></i>
+                    <div class="text-left">
+                        <div class="font-bold text-white text-lg leading-tight">Fair Pricing</div>
+                        <div class="text-xs text-zinc-400">No Hidden Fees</div>
+                    </div>
+                </div>
+                <div class="glass-panel p-4 rounded-xl flex items-center justify-center gap-3 border-white/5">
+                    <i class="fa-solid fa-car-side text-blue-400 text-2xl"></i>
+                    <div class="text-left">
+                        <div class="font-bold text-white text-lg leading-tight">Quality Work</div>
+                        <div class="text-xs text-zinc-400">Import & Domestic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS HIGHLIGHT BAR -->
+    <section class="border-y border-white/10 bg-zinc-950/80 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="font-display text-3xl sm:text-5xl font-bold text-brand-brightred mb-1">4.7★</div>
+                    <div class="text-xs sm:text-sm text-zinc-400 uppercase tracking-wider font-semibold">Customer Rating</div>
+                </div>
+                <div>
+                    <div class="font-display text-3xl sm:text-5xl font-bold text-white mb-1">100%</div>
+                    <div class="text-xs sm:text-sm text-zinc-400 uppercase tracking-wider font-semibold">Honest Diagnostics</div>
+                </div>
+                <div>
+                    <div class="font-display text-3xl sm:text-5xl font-bold text-brand-brightred mb-1">Mon–Sat</div>
+                    <div class="text-xs sm:text-sm text-zinc-400 uppercase tracking-wider font-semibold">9 AM – 6 PM Service</div>
+                </div>
+                <div>
+                    <div class="font-display text-3xl sm:text-5xl font-bold text-white mb-1">4470</div>
+                    <div class="text-xs sm:text-sm text-zinc-400 uppercase tracking-wider font-semibold">Seabreeze Dr, San Antonio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Image Visual -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-red-950/30 group">
+                        <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&q=80&w=1200" alt="R&L Auto Repair Workshop Mechanics" class="w-full h-[460px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 right-6 glass-panel p-4 rounded-xl border border-white/10">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-brand-red flex items-center justify-center text-white">
+                                    <i class="fa-solid fa-award text-lg"></i>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-white">Trusted San Antonio Shop</div>
+                                    <div class="text-xs text-zinc-400">Serving Seabreeze Dr & Surrounding Neighborhoods</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Decorative Element -->
+                    <div class="absolute -bottom-6 -right-6 w-36 h-36 bg-brand-red/20 rounded-full filter blur-2xl -z-10"></div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="lg:col-span-6">
+                    <div class="inline-flex items-center gap-2 text-brand-brightred font-semibold text-xs tracking-widest uppercase mb-3">
+                        <i class="fa-solid fa-wrench"></i> About R&L Auto Repair & Body
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold text-white leading-tight uppercase mb-6">
+                        Your Local Auto Repair Shop <br>
+                        <span class="text-brand-brightred">You Can Truly Trust</span>
+                    </h2>
+
+                    <p class="text-zinc-300 text-base sm:text-lg leading-relaxed mb-6">
+                        At <strong class="text-white">R&L Auto Repair and Body</strong>, we believe vehicle maintenance shouldn't come with stress or inflated costs. As an independent, neighborhood repair shop located on Seabreeze Dr in San Antonio, TX, our primary goal is to provide honest answers, high-quality mechanical repairs, and clean light body work.
+                    </p>
+
+                    <p class="text-zinc-400 text-sm sm:text-base leading-relaxed mb-8">
+                        Whether your check engine light just turned on, your transmission requires attention, or you need headlight and body touch-ups, our experienced technicians handle every vehicle with care, respect, and complete transparency.
+                    </p>
+
+                    <!-- Core Commitments Checklist -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-red/20 text-brand-brightred flex items-center justify-center text-xs mt-0.5 shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm sm:text-base">Clear Diagnostic Explanations</h4>
+                                <p class="text-xs sm:text-sm text-zinc-400">We walk you through what needs repair now versus what can safely wait.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-red/20 text-brand-brightred flex items-center justify-center text-xs mt-0.5 shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm sm:text-base">Fair & Transparent Rates</h4>
+                                <p class="text-xs sm:text-sm text-zinc-400">Straightforward pricing without unexpected fees or upsells.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-6 h-6 rounded-full bg-brand-red/20 text-brand-brightred flex items-center justify-center text-xs mt-0.5 shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-white text-sm sm:text-base">Domestic & Import Vehicles</h4>
+                                <p class="text-xs sm:text-sm text-zinc-400">Full diagnostic and repair capabilities for sedans, trucks, SUVs, and vans.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <a href="tel:2104214268" class="px-6 py-3.5 rounded-xl bg-brand-red hover:bg-red-700 text-white font-bold text-sm uppercase tracking-wider shadow-lg flex items-center gap-2">
+                            <i class="fa-solid fa-phone"></i> Speak With Our Shop
+                        </a>
+                        <a href="#services" class="px-6 py-3.5 rounded-xl border border-zinc-700 hover:border-zinc-500 text-zinc-200 font-semibold text-sm">
+                            View All Services
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-24 bg-zinc-950/90 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="text-brand-brightred font-semibold text-xs uppercase tracking-widest mb-2">
+                    <i class="fa-solid fa-gears"></i> Comprehensive Automotive Solutions
+                </div>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-white">
+                    Our Services & <span class="text-brand-brightred">Repairs</span>
+                </h2>
+                <p class="text-zinc-400 mt-4 text-sm sm:text-base">
+                    From routine preventative maintenance to complex engine diagnostics and light body work, R&L handles your vehicle with professional precision.
+                </p>
+            </div>
+
+            <!-- Service Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 mb-10">
+                <button onclick="filterServices('all')" class="svc-tab-btn active px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-brand-red text-white border border-brand-red transition-all">All Services</button>
+                <button onclick="filterServices('mechanical')" class="svc-tab-btn px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-600 transition-all">Mechanical & Engine</button>
+                <button onclick="filterServices('diagnostics')" class="svc-tab-btn px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-600 transition-all">Electrical & Diag</button>
+                <button onclick="filterServices('bodywork')" class="svc-tab-btn px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-600 transition-all">Light Body Work</button>
+                <button onclick="filterServices('maintenance')" class="svc-tab-btn px-4 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider bg-zinc-900 text-zinc-300 border border-zinc-800 hover:border-zinc-600 transition-all">Maintenance</button>
+            </div>
+
+            <!-- Services Grid (8 Services) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="servicesGrid">
+                
+                <!-- 1. General Auto Repair -->
+                <div class="svc-card mechanical glass-panel p-6 rounded-2xl glass-panel-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-950 to-zinc-900 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-wrench"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2 group-hover:text-brand-brightred transition-colors">
+                            General Auto Repair
+                        </h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Complete bumper-to-bumper steering, suspension, brake system, belt replacements, and cooling system fixes.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceForQuote('General Auto Repair')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors border border-zinc-800">
+                        Book This Service
+                    </button>
+                </div>
+
+                <!-- 2. Engine & Mechanical Repair -->
+                <div class="svc-card mechanical glass-panel p-6 rounded-2xl glass-panel-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-950 to-zinc-900 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-car-battery"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2 group-hover:text-brand-brightred transition-colors">
+                            Engine & Mechanical Repair
+                        </h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Engine rebuilds, cylinder head repairs, timing belts, water pumps, fuel system service, and leak repair.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceForQuote('Engine & Mechanical Repair')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors border border-zinc-800">
+                        Book This Service
+                    </button>
+                </div>
+
+                <!-- 3. Transmission Service -->
+                <div class="svc-card mechanical glass-panel p-6 rounded-2xl glass-panel-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-950 to-zinc-900 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-cogs"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2 group-hover:text-brand-brightred transition-colors">
+                            Transmission Service
+                        </h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Automatic and manual transmission repairs, fluid flushes, clutch replacements, and torque converter service.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceForQuote('Transmission Service')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors border border-zinc-800">
+                        Book This Service
+                    </button>
+                </div>
+
+                <!-- 4. Electrical Diagnostics & Repair -->
+                <div class="svc-card diagnostics glass-panel p-6 rounded-2xl glass-panel-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-950 to-zinc-900 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2 group-hover:text-brand-brightred transition-colors">
+                            Electrical Diagnostics
+                        </h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Check engine light scans, starter and alternator replacements, wiring fixes, battery testing, and sensors.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceForQuote('Electrical Diagnostics')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors border border-zinc-800">
+                        Book This Service
+                    </button>
+                </div>
+
+                <!-- 5. Oil Changes & Maintenance -->
+                <div class="svc-card maintenance glass-panel p-6 rounded-2xl glass-panel-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-950 to-zinc-900 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-oil-can"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2 group-hover:text-brand-brightred transition-colors">
+                            Oil Changes & Maintenance
+                        </h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Synthetic & conventional oil changes, filter changes, tire rotations, fluid top-offs, and multi-point inspections.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceForQuote('Oil Changes & Maintenance')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors border border-zinc-800">
+                        Book This Service
+                    </button>
+                </div>
+
+                <!-- 6. Light Body Work -->
+                <div class="svc-card bodywork glass-panel p-6 rounded-2xl glass-panel-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-950 to-zinc-900 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-spray-can text-2xl"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2 group-hover:text-brand-brightred transition-colors">
+                            Light Body Work
+                        </h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Minor dent repair, panel alignment, bumper fixes, touch-up paint, trim restoration, and scratch repair.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceForQuote('Light Body Work')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors border border-zinc-800">
+                        Book This Service
+                    </button>
+                </div>
+
+                <!-- 7. Headlight & Lighting Repair -->
+                <div class="svc-card bodywork diagnostics glass-panel p-6 rounded-2xl glass-panel-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-950 to-zinc-900 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2 group-hover:text-brand-brightred transition-colors">
+                            Headlight & Lighting Repair
+                        </h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Oxidized headlight restoration, LED upgrades, lens replacements, fog light repair, and brake light wiring.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceForQuote('Headlight & Lighting Repair')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors border border-zinc-800">
+                        Book This Service
+                    </button>
+                </div>
+
+                <!-- 8. Domestic & Import Vehicles -->
+                <div class="svc-card mechanical maintenance glass-panel p-6 rounded-2xl glass-panel-hover transition-all duration-300 group flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-950 to-zinc-900 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2 group-hover:text-brand-brightred transition-colors">
+                            Domestic & Import Vehicles
+                        </h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed mb-4">
+                            Specialized care for Ford, Chevy, Dodge, Toyota, Honda, Nissan, Hyundai, Kia, BMW, Mercedes, and more.
+                        </p>
+                    </div>
+                    <button onclick="selectServiceForQuote('Domestic & Import Vehicles')" class="w-full py-2.5 rounded-lg bg-zinc-900 hover:bg-brand-red text-zinc-300 hover:text-white text-xs font-semibold uppercase tracking-wider transition-colors border border-zinc-800">
+                        Book This Service
+                    </button>
+                </div>
+
+            </div>
+
+            <!-- Callout CTA Underneath Services -->
+            <div class="mt-16 glass-panel p-8 rounded-2xl border border-brand-red/40 bg-gradient-to-r from-red-950/40 via-zinc-900/80 to-red-950/40 text-center flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-left">
+                    <h3 class="font-display text-2xl font-bold uppercase text-white">Need a specific repair or custom body work?</h3>
+                    <p class="text-zinc-400 text-sm mt-1">Call us or drop by Seabreeze Dr for an accurate diagnostic assessment.</p>
+                </div>
+                <div class="flex items-center gap-4 shrink-0">
+                    <a href="tel:2104214268" class="px-6 py-3 bg-brand-red hover:bg-red-700 text-white font-bold rounded-xl text-sm uppercase tracking-wider flex items-center gap-2 shadow-lg">
+                        <i class="fa-solid fa-phone"></i> Call R&L Today: (210) 421-4268
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE & AFTER REPAIR SHOWCASE SECTION -->
+    <section id="work" class="py-24 relative bg-zinc-900/50 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-brand-brightred font-semibold text-xs uppercase tracking-widest mb-2">
+                    <i class="fa-solid fa-sliders"></i> Quality Workmanship
+                </div>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-white">
+                    Before <span class="text-brand-brightred">&</span> After Repair Showcase
+                </h2>
+                <p class="text-zinc-400 mt-4 text-sm sm:text-base">
+                    Drag the slider below to see actual before & after results of our light body work, panel alignment, and headlight restoration.
+                </p>
+            </div>
+
+            <!-- Interactive Comparison Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-7">
+                    <div class="ba-container rounded-2xl border border-white/10 shadow-2xl h-[360px] sm:h-[420px] w-full" id="baSliderContainer">
+                        <!-- After Image -->
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1200" alt="Repaired Car Body Work After" class="ba-after-img">
+                        <div class="absolute bottom-4 right-4 bg-emerald-600 text-white text-xs font-bold uppercase px-3 py-1 rounded-md z-10 shadow">
+                            AFTER REPAIR
+                        </div>
+
+                        <!-- Before Wrapper & Image -->
+                        <div class="ba-before-wrapper" id="baBeforeWrapper">
+                            <img src="https://images.unsplash.com/photo-1590362891991-f776e747a588?auto=format&fit=crop&q=80&w=1200" alt="Damaged Car Panel Before Repair" class="ba-before-img" id="baBeforeImg">
+                            <div class="absolute bottom-4 left-4 bg-brand-red text-white text-xs font-bold uppercase px-3 py-1 rounded-md z-10 shadow">
+                                BEFORE DAMAGE
+                            </div>
+                        </div>
+
+                        <!-- Divider Handle -->
+                        <div class="ba-slider-line" id="baLine">
+                            <div class="ba-handle">
+                                <i class="fa-solid fa-arrows-left-right text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explanatory Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-brand-red">
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2">Bumper & Panel Damage Repair</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                            Scratched bumpers, misaligned fenders, and minor collision dents are smoothed out, aligned, and matched for a factory-like finish.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-amber-500">
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2">Headlight & Trim Restoration</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                            Cloudy, yellowed headlight lenses severely reduce night visibility. We clean, polish, and seal headlight assemblies to crystal clarity.
+                        </p>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border-l-4 border-emerald-500">
+                        <h3 class="font-display text-xl font-bold uppercase text-white mb-2">Mechanical Restorations</h3>
+                        <p class="text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                            Replacing worn suspension arms, leaking radiators, and rusted exhaust manifolds to return your ride to peak safety standards.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US SECTION -->
+    <section id="why-us" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-brand-brightred font-semibold text-xs uppercase tracking-widest mb-2">
+                    <i class="fa-solid fa-thumbs-up"></i> Local Excellence
+                </div>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-white">
+                    Why San Antonio Drivers <span class="text-brand-brightred">Choose R&L</span>
+                </h2>
+                <p class="text-zinc-400 mt-4 text-sm sm:text-base">
+                    We treat every vehicle as if it belonged to our own family. Here is why our customers keep returning for all their auto needs.
+                </p>
+            </div>
+
+            <!-- 5 Visual Feature Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="glass-panel p-8 rounded-2xl glass-panel-hover transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-brand-brightred text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white uppercase mb-3">Honest Communication</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        We explain the problem clearly in simple terms and lay out your repair options before turning a single wrench. No mysterious jargon.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-panel p-8 rounded-2xl glass-panel-hover transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-emerald-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white uppercase mb-3">Fair, Transparent Pricing</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        Straightforward labor rates and reasonable parts pricing without hidden add-ons or aggressive unnecessary upsells.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-panel p-8 rounded-2xl glass-panel-hover transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-amber-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white uppercase mb-3">Fast Turnaround</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        We work efficiently to diagnose, source quality parts, and complete repairs promptly so you can get safely back on San Antonio roads.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-panel p-8 rounded-2xl glass-panel-hover transition-all duration-300 relative overflow-hidden group">
+                    <div class="text-blue-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-house-chimney-crack"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white uppercase mb-3">Local & Reliable</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        A true neighborhood repair shop committed to building long-term customer relationships across San Antonio and Bexar County.
+                    </p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-panel p-8 rounded-2xl glass-panel-hover transition-all duration-300 relative overflow-hidden group lg:col-span-2 md:col-span-2">
+                    <div class="text-purple-400 text-3xl mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fa-solid fa-user-gear"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white uppercase mb-3">Experienced Automotive Service</h3>
+                    <p class="text-zinc-400 text-sm leading-relaxed">
+                        From older high-mileage trucks to modern computerized import sedans, our experienced technicians possess the hands-on expertise and modern diagnostic tools needed to solve complex mechanical and body issues.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS & REVIEWS SECTION -->
+    <section id="reviews" class="py-24 bg-zinc-950/80 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                <div>
+                    <div class="text-brand-brightred font-semibold text-xs uppercase tracking-widest mb-2">
+                        <i class="fa-solid fa-star text-brand-gold"></i> Verified Customer Feedback
+                    </div>
+                    <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-white">
+                        What San Antonio <span class="text-brand-brightred">Drivers Say</span>
+                    </h2>
+                </div>
+                
+                <!-- Google Rating Badge -->
+                <a href="https://maps.google.com/?cid=10455720962454973639" target="_blank" class="glass-panel p-4 rounded-xl border border-brand-gold/30 flex items-center gap-4 hover:bg-white/5 transition-colors shrink-0">
+                    <div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-brand-gold font-bold text-2xl">
+                        4.7
+                    </div>
+                    <div>
+                        <div class="flex text-brand-gold text-sm gap-1 mb-1">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <div class="text-xs text-zinc-300 font-semibold">Google Customer Rated Shop</div>
+                        <div class="text-[11px] text-zinc-500">Click to read verified reviews</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Testimonial Cards Carousel Container -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="reviewContainer">
+                
+                <!-- Review 1 -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between border-white/10 relative">
+                    <div>
+                        <div class="flex text-brand-gold text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-sm italic leading-relaxed mb-6">
+                            "R&L is hands down the most honest mechanic shop I've used in San Antonio. Took my truck in when another shop tried charging me thousands. R&L diagnosed the actual minor sensor issue and fixed it same day at a fair price."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-brand-red/30 text-white font-bold flex items-center justify-center text-sm">
+                            M.R.
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Marcus Rodriguez</div>
+                            <div class="text-xs text-zinc-500">San Antonio Resident • Engine Diagnostic</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between border-white/10 relative">
+                    <div>
+                        <div class="flex text-brand-gold text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-sm italic leading-relaxed mb-6">
+                            "Brought my car in for light body repair and brake work after a minor dent. They were super transparent about costs and completion time. Returned looking clean and driving perfectly. Highly recommend!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-blue-600/30 text-white font-bold flex items-center justify-center text-sm">
+                            S.G.
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">Sarah Gutierrez</div>
+                            <div class="text-xs text-zinc-500">San Antonio Resident • Light Body Work</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="glass-panel p-8 rounded-2xl flex flex-col justify-between border-white/10 relative">
+                    <div>
+                        <div class="flex text-brand-gold text-sm gap-1 mb-4">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-zinc-300 text-sm italic leading-relaxed mb-6">
+                            "Quick turnaround, friendly technicians, and fair prices. It's hard to find an independent auto repair shop you can trust completely, but R&L earned my business permanently."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+                        <div class="w-10 h-10 rounded-full bg-emerald-600/30 text-white font-bold flex items-center justify-center text-sm">
+                            D.T.
+                        </div>
+                        <div>
+                            <div class="font-bold text-white text-sm">David Thomas</div>
+                            <div class="text-xs text-zinc-500">San Antonio Resident • Transmission Maintenance</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- MID-PAGE CONVERSION CTA BANNER -->
+    <section class="relative py-20 bg-gradient-to-r from-red-950 via-zinc-950 to-red-950 border-y border-brand-red/30 overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-red/20 via-transparent to-transparent"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center">
+            <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-white mb-4">
+                Something Wrong With Your Vehicle?
+            </h2>
+            <p class="text-zinc-300 text-base sm:text-xl max-w-2xl mx-auto mb-8">
+                Let R&L Auto Repair & Body diagnose the issue and help get you safely back on the road with total peace of mind.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="tel:2104214268" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-red hover:bg-red-700 text-white text-base font-bold shadow-2xl shadow-brand-red/50 flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-phone"></i> Call (210) 421-4268
+                </a>
+                <a href="https://maps.google.com/?cid=10455720962454973639" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-panel text-white text-base font-semibold hover:bg-white/10 flex items-center justify-center gap-2 border border-white/20">
+                    <i class="fa-solid fa-directions text-brand-gold"></i> Get Directions to 4470 Seabreeze Dr
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT & LOCATION SECTION -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="text-brand-brightred font-semibold text-xs uppercase tracking-widest mb-2">
+                    <i class="fa-solid fa-location-dot"></i> Visit Our San Antonio Shop
+                </div>
+                <h2 class="font-display text-3xl sm:text-5xl font-bold uppercase text-white">
+                    Contact <span class="text-brand-brightred">&</span> Location
+                </h2>
+                <p class="text-zinc-400 mt-4 text-sm sm:text-base">
+                    Visit us on Seabreeze Dr or submit a request online to schedule service or get a diagnostic estimate.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                
+                <!-- Left: Business Details Card -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="glass-panel p-8 rounded-2xl border-white/10 space-y-6">
+                        <h3 class="font-display text-2xl font-bold text-white uppercase border-b border-white/10 pb-4">
+                            R&L Auto Repair and Body
+                        </h3>
+
+                        <!-- Address -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/20 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-xl shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs uppercase text-zinc-400 font-semibold mb-0.5">Address</div>
+                                <div class="text-white font-medium text-sm sm:text-base">
+                                    4470 Seabreeze Dr<br>San Antonio, TX 78220
+                                </div>
+                                <a href="https://maps.google.com/?cid=10455720962454973639" target="_blank" class="inline-block text-xs text-brand-brightred hover:underline mt-1">
+                                    Open in Google Maps →
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/20 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs uppercase text-zinc-400 font-semibold mb-0.5">Phone Number</div>
+                                <a href="tel:2104214268" class="text-white hover:text-brand-brightred font-bold text-lg sm:text-xl transition-colors">
+                                    (210) 421-4268
+                                </a>
+                                <div class="text-xs text-zinc-400 mt-0.5">Call or tap to connect with our front desk</div>
+                            </div>
+                        </div>
+
+                        <!-- Hours -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-red/20 border border-brand-red/30 flex items-center justify-center text-brand-brightred text-xl shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div class="w-full">
+                                <div class="text-xs uppercase text-zinc-400 font-semibold mb-1">Hours of Operation</div>
+                                <div class="space-y-1 text-sm">
+                                    <div class="flex justify-between text-zinc-200">
+                                        <span>Monday – Saturday:</span>
+                                        <span class="font-semibold text-white">9:00 AM – 6:00 PM</span>
+                                    </div>
+                                    <div class="flex justify-between text-zinc-400">
+                                        <span>Sunday:</span>
+                                        <span class="text-brand-brightred font-semibold">Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Rating summary -->
+                        <div class="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-zinc-400">
+                            <span>Google Rating: <strong class="text-white">4.7 Stars</strong></span>
+                            <span class="text-emerald-400 font-medium"><i class="fa-solid fa-circle text-[8px]"></i> Independent Shop</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Service Request Form -->
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-8 rounded-2xl border-white/10 relative">
+                        <h3 class="font-display text-2xl font-bold text-white uppercase mb-2">Request Service / Inquiry</h3>
+                        <p class="text-xs sm:text-sm text-zinc-400 mb-6">Fill out your details and requested vehicle service. We will get back to you promptly.</p>
+
+                        <!-- Notification Box -->
+                        <div id="formSuccessMessage" class="hidden mb-6 p-4 rounded-xl bg-emerald-950/80 border border-emerald-500/50 text-emerald-300 text-sm flex items-center gap-3">
+                            <i class="fa-solid fa-circle-check text-xl text-emerald-400"></i>
+                            <div>
+                                <div class="font-bold text-white">Service Request Submitted!</div>
+                                <div class="text-xs text-emerald-200">Thank you. R&L Auto Repair will call you shortly at the provided number.</div>
+                            </div>
+                        </div>
+
+                        <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase font-semibold text-zinc-300 mb-1">Full Name *</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full bg-zinc-900 border border-zinc-700 focus:border-brand-red rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-semibold text-zinc-300 mb-1">Phone Number *</label>
+                                    <input type="tel" required placeholder="(210) 000-0000" class="w-full bg-zinc-900 border border-zinc-700 focus:border-brand-red rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs uppercase font-semibold text-zinc-300 mb-1">Vehicle (Year, Make, Model)</label>
+                                    <input type="text" placeholder="e.g. 2018 Ford F-150" class="w-full bg-zinc-900 border border-zinc-700 focus:border-brand-red rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-xs uppercase font-semibold text-zinc-300 mb-1">Service Needed</label>
+                                    <select id="formServiceSelect" class="w-full bg-zinc-900 border border-zinc-700 focus:border-brand-red rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                                        <option value="General Mechanical Repair">General Mechanical Repair</option>
+                                        <option value="Check Engine / Electrical Diagnostics">Check Engine / Electrical Diagnostics</option>
+                                        <option value="Light Body Work & Paint Touchup">Light Body Work & Paint Touchup</option>
+                                        <option value="Transmission Service">Transmission Service</option>
+                                        <option value="Oil Change & Preventative Maintenance">Oil Change & Preventative Maintenance</option>
+                                        <option value="Brake Replacement / Repair">Brake Replacement / Repair</option>
+                                        <option value="Other Service">Other Service</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs uppercase font-semibold text-zinc-300 mb-1">Message / Issue Details</label>
+                                <textarea rows="3" placeholder="Describe what noises, lights, or body damage you're experiencing..." class="w-full bg-zinc-900 border border-zinc-700 focus:border-brand-red rounded-lg px-4 py-3 text-sm text-white focus:outline-none transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-brand-red to-red-700 hover:from-red-600 hover:to-brand-red text-white font-bold uppercase tracking-wider text-sm shadow-xl flex items-center justify-center gap-2 transition-all">
+                                <i class="fa-solid fa-paper-plane"></i> Submit Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Google Map Embed Frame -->
+            <div class="mt-12 rounded-2xl overflow-hidden border border-white/10 shadow-2xl h-[320px] relative">
+                <iframe 
+                    title="R&L Auto Repair and Body Location Map" 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3473.845892189872!2d-98.412!3d29.418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865cf7820c39143f%3A0x911a1ed18dbbc7c7!2s4470%20Seabreeze%20Dr%2C%20San%20Antonio%2C%20TX%2078220!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                    class="w-full h-full border-0 filter opacity-90 contrast-125" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA BANNER -->
+    <section class="py-16 bg-gradient-to-b from-zinc-950 to-brand-dark border-t border-white/10">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="font-display text-3xl sm:text-4xl font-bold uppercase text-white mb-3">
+                Keep Your Vehicle Running Right.
+            </h2>
+            <p class="text-zinc-400 text-sm sm:text-base max-w-xl mx-auto mb-8">
+                Trusted local auto repair and body service in San Antonio, TX. Stop by 4470 Seabreeze Dr or call us today!
+            </p>
+            <a href="tel:2104214268" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-brand-red hover:bg-red-700 text-white font-bold text-lg uppercase tracking-wider shadow-2xl shadow-brand-red/40 transition-transform transform hover:scale-105">
+                <i class="fa-solid fa-phone"></i> Call Now — (210) 421-4268
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-zinc-950 border-t border-white/10 pt-16 pb-12 text-zinc-400 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-lg bg-brand-red flex items-center justify-center text-white font-display text-xl font-bold">
+                            R&L
+                        </div>
+                        <span class="font-display text-xl font-bold text-white tracking-wider">
+                            R&L AUTO REPAIR & BODY
+                        </span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-zinc-400">
+                        Reliable automotive mechanical repair and light body work in San Antonio, TX. Dedicated to honest service and customer satisfaction.
+                    </p>
+                    <div class="flex items-center gap-3 text-white">
+                        <a href="https://maps.google.com/?cid=10455720962454973639" target="_blank" class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-brand-red transition-colors" title="Google Business Profile">
+                            <i class="fa-brands fa-google text-xs"></i>
+                        </a>
+                        <a href="tel:2104214268" class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-brand-red transition-colors" title="Call Phone">
+                            <i class="fa-solid fa-phone text-xs"></i>
+                        </a>
+                        <a href="https://maps.google.com/?cid=10455720962454973639" target="_blank" class="w-9 h-9 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center hover:bg-brand-red transition-colors" title="Location Map">
+                            <i class="fa-solid fa-location-dot text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links -->
+                <div>
+                    <h4 class="font-display text-white text-base font-bold uppercase mb-4 tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-brand-brightred transition-colors">Home Page</a></li>
+                        <li><a href="#about" class="hover:text-brand-brightred transition-colors">About Our Shop</a></li>
+                        <li><a href="#services" class="hover:text-brand-brightred transition-colors">Services & Repairs</a></li>
+                        <li><a href="#work" class="hover:text-brand-brightred transition-colors">Before & After Results</a></li>
+                        <li><a href="#why-us" class="hover:text-brand-brightred transition-colors">Why Choose R&L</a></li>
+                        <li><a href="#reviews" class="hover:text-brand-brightred transition-colors">Customer Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-brand-brightred transition-colors">Contact & Directions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services Summary -->
+                <div>
+                    <h4 class="font-display text-white text-base font-bold uppercase mb-4 tracking-wider">Services</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><span class="text-zinc-300">General Auto Repair</span></li>
+                        <li><span class="text-zinc-300">Engine & Transmission</span></li>
+                        <li><span class="text-zinc-300">Electrical Diagnostics</span></li>
+                        <li><span class="text-zinc-300">Oil Changes & Maintenance</span></li>
+                        <li><span class="text-zinc-300">Light Body Work & Dents</span></li>
+                        <li><span class="text-zinc-300">Headlight & Lens Repair</span></li>
+                        <li><span class="text-zinc-300">Import & Domestic Care</span></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Shop Info -->
+                <div>
+                    <h4 class="font-display text-white text-base font-bold uppercase mb-4 tracking-wider">Shop Details</h4>
+                    <div class="text-xs space-y-2 text-zinc-300">
+                        <p><strong class="text-white">Address:</strong><br>4470 Seabreeze Dr<br>San Antonio, TX 78220</p>
+                        <p><strong class="text-white">Phone:</strong> <a href="tel:2104214268" class="text-brand-brightred hover:underline">(210) 421-4268</a></p>
+                        <p><strong class="text-white">Hours:</strong><br>Mon–Sat: 9:00 AM – 6:00 PM<br>Sunday: Closed</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright & Policies -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-zinc-500 gap-4">
+                <div>
+                    &copy; <span id="currentYear"></span> R&L Auto Repair and Body. All Rights Reserved. San Antonio, TX.
+                </div>
+                <div class="flex items-center gap-6">
+                    <a href="#home" class="hover:text-zinc-300">Privacy Policy</a>
+                    <a href="#home" class="hover:text-zinc-300">Terms of Service</a>
+                    <a href="#home" class="hover:text-brand-brightred text-zinc-400">Back to Top ↑</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FREE ESTIMATE MODAL POPUP -->
+    <div id="estimateModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="glass-panel max-w-lg w-full rounded-2xl p-6 sm:p-8 border border-white/10 relative shadow-2xl animate-fade-in">
+            <button onclick="closeModal('estimateModal')" class="absolute top-4 right-4 text-zinc-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="text-brand-brightred font-semibold text-xs uppercase tracking-widest mb-1">
+                <i class="fa-solid fa-calculator"></i> Quick Quote
+            </div>
+            <h3 class="font-display text-2xl font-bold uppercase text-white mb-4">Request a Free Estimate</h3>
+            
+            <form id="modalEstimateForm" onsubmit="handleModalSubmit(event)" class="space-y-4 text-xs">
+                <div>
+                    <label class="block font-semibold text-zinc-300 mb-1">Your Name *</label>
+                    <input type="text" required placeholder="Name" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-white focus:outline-none focus:border-brand-red text-sm">
+                </div>
+                <div class="grid grid-cols-2 gap-3">
+                    <div>
+                        <label class="block font-semibold text-zinc-300 mb-1">Phone Number *</label>
+                        <input type="tel" required placeholder="(210) 000-0000" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-white focus:outline-none focus:border-brand-red text-sm">
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-zinc-300 mb-1">Vehicle Year & Model</label>
+                        <input type="text" placeholder="2019 Honda Accord" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-white focus:outline-none focus:border-brand-red text-sm">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-semibold text-zinc-300 mb-1">Service or Damage Description</label>
+                    <textarea rows="3" placeholder="Explain what repairs or body work you need..." class="w-full bg-zinc-900 border border-zinc-700 rounded-lg p-3 text-white focus:outline-none focus:border-brand-red text-sm"></textarea>
+                </div>
+                <button type="submit" class="w-full py-3.5 bg-brand-red hover:bg-red-700 text-white font-bold rounded-xl text-sm uppercase tracking-wider shadow-lg">
+                    Send Estimate Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT CODE -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile drawer menu toggle
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const icon = document.getElementById('menuIcon');
+            if (drawer.classList.contains('hidden')) {
+                drawer.classList.remove('hidden');
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                drawer.classList.add('hidden');
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
+        }
+
+        // Modal Controls
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Pre-fill estimate form from service card selection
+        function selectServiceForQuote(serviceName) {
+            const selectElem = document.getElementById('formServiceSelect');
+            if (selectElem) {
+                for (let i = 0; i < selectElem.options.length; i++) {
+                    if (selectElem.options[i].value.toLowerCase().includes(serviceName.toLowerCase()) || 
+                        serviceName.toLowerCase().includes(selectElem.options[i].value.toLowerCase())) {
+                        selectElem.selectedIndex = i;
+                        break;
+                    }
+                }
+            }
+            // Smooth scroll to contact section
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Service Tab Filtering
+        function filterServices(category) {
+            const cards = document.querySelectorAll('.svc-card');
+            const buttons = document.querySelectorAll('.svc-tab-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-brand-red', 'text-white', 'border-brand-red');
+                btn.classList.add('bg-zinc-900', 'text-zinc-300', 'border-zinc-800');
+            });
+
+            event.target.classList.remove('bg-zinc-900', 'text-zinc-300', 'border-zinc-800');
+            event.target.classList.add('bg-brand-red', 'text-white', 'border-brand-red');
+
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.style.display = 'flex';
+                } else if (card.classList.contains(category)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const msg = document.getElementById('formSuccessMessage');
+            msg.classList.remove('hidden');
+            event.target.reset();
+            setTimeout(() => {
+                msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+
+        function handleModalSubmit(event) {
+            event.preventDefault();
+            alert('Estimate Request Sent! R&L Auto Repair and Body will call you shortly.');
+            closeModal('estimateModal');
+            event.target.reset();
+        }
+
+        // Interactive Before/After Image Comparison Slider
+        (function initBeforeAfterSlider() {
+            const container = document.getElementById('baSliderContainer');
+            const beforeWrapper = document.getElementById('baBeforeWrapper');
+            const beforeImg = document.getElementById('baBeforeImg');
+            const line = document.getElementById('baLine');
+
+            if (!container || !beforeWrapper || !line) return;
+
+            function updateSliderWidth() {
+                if (beforeImg && container) {
+                    beforeImg.style.width = container.offsetWidth + 'px';
+                }
+            }
+
+            window.addEventListener('resize', updateSliderWidth);
+            updateSliderWidth();
+
+            let isDragging = false;
+
+            function setSliderPosition(x) {
+                const rect = container.getBoundingClientRect();
+                let position = x - rect.left;
+                if (position < 0) position = 0;
+                if (position > rect.width) position = rect.width;
+
+                const percentage = (position / rect.width) * 100;
+                beforeWrapper.style.width = percentage + '%';
+                line.style.left = percentage + '%';
+            }
+
+            container.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                setSliderPosition(e.clientX);
+            });
+
+            window.addEventListener('mouseup', function() {
+                isDragging = false;
+            });
+
+            window.addEventListener('mousemove', function(e) {
+                if (!isDragging) return;
+                setSliderPosition(e.clientX);
+            });
+
+            // Touch events for mobile swiping
+            container.addEventListener('touchstart', function(e) {
+                isDragging = true;
+                if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
+            });
+
+            window.addEventListener('touchend', function() {
+                isDragging = false;
+            });
+
+            window.addEventListener('touchmove', function(e) {
+                if (!isDragging) return;
+                if (e.touches[0]) setSliderPosition(e.touches[0].clientX);
+            });
+        })();
+
+        // Real-time Shop Open/Closed schedule indicator
+        (function checkShopHours() {
+            const now = new Date();
+            const day = now.getDay(); // 0 = Sun, 1 = Mon ... 6 = Sat
+            const hour = now.getHours(); // 0-23
+            const badge = document.getElementById('shopStatusBadge');
+
+            if (!badge) return;
+
+            // Hours: Mon-Sat 9 AM (9) to 6 PM (18)
+            const isOpenDay = day >= 1 && day <= 6;
+            const isOpenHour = hour >= 9 && hour < 18;
+
+            if (isOpenDay && isOpenHour) {
+                badge.innerHTML = '<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span><i class="fa-solid fa-circle text-[8px] text-emerald-400"></i> Open Today: 9:00 AM – 6:00 PM';
+                badge.className = "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-semibold text-[11px] bg-emerald-500/10 text-emerald-400 border border-emerald-500/30";
+            } else {
+                badge.innerHTML = '<i class="fa-solid fa-circle text-[8px] text-amber-400"></i> Closed Right Now — Opens 9 AM Mon–Sat';
+                badge.className = "inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-semibold text-[11px] bg-amber-500/10 text-amber-300 border border-amber-500/30";
+            }
+        })();
+    </script>
+</body>
+</html>
